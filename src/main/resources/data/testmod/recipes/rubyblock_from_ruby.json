@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "forscherfreundemod:ruby"
+    }
+  },
+  "result": {
+    "item": "forscherfreundemod:ruby_block"
+  }
+}

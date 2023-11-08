@@ -1,0 +1,13 @@
+{
+  "form": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "forscherfreundemod:ruby_block"
+    }
+  ],
+  "result": {
+    "item": "forscherfreundemod:ruby",
+    "count": 9
+  }
+}
