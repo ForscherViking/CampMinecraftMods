@@ -29,4 +29,8 @@ public class ModItems {
     public static void registerModItems() {
         TestMod.LOGGER.info("Registering Mod Items for " + TestMod.MOD_ID);
     }
+
+    public static Item GetItem(String name) {
+        return Items.get(name);
+    }
 }

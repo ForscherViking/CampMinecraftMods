@@ -5,16 +5,22 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.forscherfreunde.mod.TestMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.GlassBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class ModBlocks {
+
+    public static Stack<Block> AllTransparentBlocks = new Stack<Block>();
     public static List<Block> blockList = new ArrayList<>();
 
     private static Item registerBlockItem(String name, Block block) {
@@ -32,4 +38,5 @@ public class ModBlocks {
 
         TestMod.LOGGER.info("Registering Blocks for " + TestMod.MOD_ID);
     }
+
 }

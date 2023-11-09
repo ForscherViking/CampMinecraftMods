@@ -1,6 +1,13 @@
 {
   "item.forscherfreundemod.ruby": "Ruby",
   "block.forscherfreundemod.ruby_block": "Ruby Block",
+  "block.forscherfreundemod.ruby_ore": "Ruby Ore",
+  "block.forscherfreundemod.ruby_glass": "Ruby Glass",
+  "item.forscherfreundemod.ruby_pickaxe": "Ruby Pickaxe",
+  "item.forscherfreundemod.ruby_sword": "Ruby Sword",
+  "item.forscherfreundemod.ruby_hoe": "Ruby Hoe",
+  "item.forscherfreundemod.ruby_axe": "Ruby Axe",
+  "item.forscherfreundemod.shovel": "Ruby Shovel",
 
-  "itemgroup.ruby": "Ruby Testgruppe"
+  "itemgroup.ruby": "ForscherFreunde Mod"
 }
