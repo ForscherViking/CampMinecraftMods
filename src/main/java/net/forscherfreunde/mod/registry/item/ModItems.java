@@ -8,23 +8,25 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class ModItems {
 
     public static Map<String, Item> Items = new HashMap<>();
-    private static Item firstItem = null;
+    public static Item firstItem = null;
+
+    public static List<Item> itemList = new ArrayList<>();
 
 //    public static Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
 
 
 
     public static Item registerItem(String name, Item item) {
-        if(firstItem == null)
+        if(firstItem == null) {
             firstItem = item;
+        }
         Items.put(name, item);
+        itemList.add(item);
         return Registry.register(Registries.ITEM, new Identifier(TestMod.MOD_ID, name), item);
     }
 

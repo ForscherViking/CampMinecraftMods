@@ -11,10 +11,15 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModBlocks {
 
 //    public static final Block RUBY_BLOCK = registerBlock("ruby_block",
 //            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+    public static List<Block> blockList = new ArrayList<>();
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(TestMod.MOD_ID, name),
@@ -23,6 +28,7 @@ public class ModBlocks {
 
     public static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        blockList.add(block);
         return Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, name), block);
     }
 
