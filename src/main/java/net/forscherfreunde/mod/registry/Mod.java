@@ -21,4 +21,15 @@ public class Mod {
                 .copyOf(Blocks.IRON_BLOCK).hardness(haerte).resistance(resistenz)
                 .luminance(leuchtlevel)));
     }
+
+//    public static void CustomAxeHinzufuegen() {}
+
+//    public static void CustomPickaxeHinzufuegen() {}
+
+//    public static void CustomHoeHinzufuegen() {}
+
+//    public static void CustomSwordHinzufuegen() {}
+
+//    public static void CustomShovelHinzufuegen() {}
+
 }

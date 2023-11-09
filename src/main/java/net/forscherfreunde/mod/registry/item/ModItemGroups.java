@@ -17,15 +17,14 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(Items.DIAMOND)).entries((displayContext, entries) -> {
 
 
+                        // --- hinzufügen von Items und Blöcken
                         for (int i=0; i<ModItems.itemList.size(); i++) {
                             entries.add(ModItems.itemList.get(i));
                         }
                         for (int i=0; i<ModBlocks.blockList.size(); i++) {
                             entries.add(ModBlocks.blockList.get(i));
                         }
-
-//                        entries.add(ModItems.RUBY);
-//                        entries.add(ModBlocks.RUBY_BLOCK);
+                        // --- hinzufügen von Waffen und Werkzeugen ---
 
                     }).build());
 

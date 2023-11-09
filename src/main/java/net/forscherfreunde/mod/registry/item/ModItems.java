@@ -17,10 +17,6 @@ public class ModItems {
 
     public static List<Item> itemList = new ArrayList<>();
 
-//    public static Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
-
-
-
     public static Item registerItem(String name, Item item) {
         if(firstItem == null) {
             firstItem = item;

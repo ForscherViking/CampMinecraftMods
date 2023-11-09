@@ -15,9 +15,17 @@ public class TestMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		//TestBlöcke und Items - einfach Code kopieren und Namen anpassen.
 		Mod.BlockHinzufuegen("ruby_block", 2.0f, 10.0f, 4);
 		Mod.ItemHinzufuegen("ruby");
 
+
+		//TestWerkzeuge und Waffen - einfach Code kopieren und Namen und Attribute anpassen.
+
+
+
+
+		//Nicht Verändern!! Initialisierung der Mod...
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
