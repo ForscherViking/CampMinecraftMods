@@ -1,8 +1,8 @@
-package net.forscherfreunde.mod.item;
+package net.forscherfreunde.mod.registry.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.forscherfreunde.mod.TestMod;
-import net.forscherfreunde.mod.block.ModBlocks;
+import net.forscherfreunde.mod.registry.block.ModBlocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,10 +14,11 @@ public class ModItemGroups {
     public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(TestMod.MOD_ID, "ruby"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
-                    .icon(() -> new ItemStack(ModItems.RUBY)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(Items.DIAMOND)).entries((displayContext, entries) -> {
 
-                        entries.add(ModItems.RUBY);
-                        entries.add(ModBlocks.RUBY_BLOCK);
+
+//                        entries.add(ModItems.RUBY);
+//                        entries.add(ModBlocks.RUBY_BLOCK);
 
                     }).build());
 

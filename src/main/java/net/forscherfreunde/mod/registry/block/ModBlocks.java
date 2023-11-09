@@ -1,4 +1,4 @@
-package net.forscherfreunde.mod.block;
+package net.forscherfreunde.mod.registry.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -13,15 +13,15 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block RUBY_BLOCK = registerBlock("ruby_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+//    public static final Block RUBY_BLOCK = registerBlock("ruby_block",
+//            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(TestMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 
-    private static Block registerBlock(String name, Block block) {
+    public static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, name), block);
     }
