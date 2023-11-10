@@ -18,9 +18,9 @@ public class TestMod implements ModInitializer {
 		//TestBlöcke und Items - einfach Code kopieren und Namen anpassen.
 		Mod.ItemHinzufuegen("ruby");
 
-		Mod.BlockHinzufuegen("ruby_block", 2.0f, 10.0f, 4);
-		Mod.BlockHinzufuegen("ruby_ore", 2.0f, 10.0f, 6);
-		Mod.TransparentenBlockHinzufuegen("ruby_glass", 0.0f, 2.0f, 10);
+		Mod.BlockHinzufuegen("ruby_block", 2.0f, 4);
+		Mod.ErzBlockHinzufuegen("ruby_ore", 2.0f, 6);
+		Mod.TransparentenBlockHinzufuegen("ruby_glass", 1.0f, 10);
 
 
 
@@ -32,6 +32,8 @@ public class TestMod implements ModInitializer {
 		Mod.SpitzhackeHinzufuegen("ruby_pickaxe", new RubinMaterial(), 7, 1.2f, ModItemGroups.RUBY_GROUP, MOD_ID);
 
 
+		//Test Custom Essen
+		Mod.FoodItemHinzufuegen("tomato");
 
 
 		//Nicht Verändern!! Initialisierung der Mod...
