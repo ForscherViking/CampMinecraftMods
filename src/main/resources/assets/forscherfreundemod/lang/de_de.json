@@ -7,9 +7,14 @@
   "item.forscherfreundemod.ruby_sword": "Ruby Sword",
   "item.forscherfreundemod.ruby_hoe": "Ruby Hoe",
   "item.forscherfreundemod.ruby_axe": "Ruby Axe",
-  "item.forscherfreundemod.shovel": "Ruby Shovel",
+  "item.forscherfreundemod.ruby_shovel": "Ruby Shovel",
 
   "item.forscherfreundemod.tomato": "Tomato",
+
+  "item.forscherfreundemod.ruby_helmet": "Ruby Helmet",
+  "item.forscherfreundemod.ruby_chestplate": "Ruby Chestplate",
+  "item.forscherfreundemod.ruby_leggings": "Ruby Leggings",
+  "item.forscherfreundemod.ruby_boots": "Ruby Boots",
 
   "itemgroup.ruby": "ForscherFreunde Mod"
 }

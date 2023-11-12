@@ -1,0 +1,5 @@
+// 1.20.2	2023-11-12T06:09:45.8201541	ForscherFreundeMod/Tags for minecraft:block
+8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
+9e978b0e1fa68c8c90083e24cc3567bd99c24b45 data\minecraft\tags\blocks\needs_iron_tool.json
+36f8c09ea56ef6f5b975163c314c56a6259f1866 data\minecraft\tags\blocks\needs_stone_tool.json
+c5f07e7e18a2e011e31a8f0df2a2fa54a1cbbca9 data\minecraft\tags\blocks\mineable\pickaxe.json

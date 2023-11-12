@@ -10,10 +10,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.GlassBlock;
-import net.minecraft.item.FoodComponents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ToolItem;
+import net.minecraft.item.*;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import java.util.List;
@@ -77,6 +75,11 @@ public class Mod {
     public static void SchwertHinzufuegen(String name, AusruestungsMaterial material, int AngriffsSchaden, float AngriffsGeschwindigkeit, ItemGroup group, String modid) {
         ToolItem schwert = new CustomSword(material, AngriffsSchaden, AngriffsGeschwindigkeit, new FabricItemSettings());
         ModItems.registerItem(name, schwert);
+    }
+
+    public static void RuestungHinzufuegen(String name, ModRuestungsMaterial material, ArmorItem.Type type) {
+        ArmorItem armorItem = new ArmorItem(material, type, new FabricItemSettings());
+        ModItems.registerItem(name, armorItem);
     }
 
     public static Item HoleItem(String name) {

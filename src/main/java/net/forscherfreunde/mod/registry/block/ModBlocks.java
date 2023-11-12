@@ -14,22 +14,23 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class ModBlocks {
 
     public static Stack<Block> AllTransparentBlocks = new Stack<Block>();
     public static List<Block> blockList = new ArrayList<>();
+    public static Map<String, Block> modBlocks = new HashMap<>();
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(TestMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
+
     }
 
     public static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        modBlocks.put(name, block);
         blockList.add(block);
         return Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, name), block);
     }
@@ -37,6 +38,10 @@ public class ModBlocks {
     public static void registerModBlocks() {
 
         TestMod.LOGGER.info("Registering Blocks for " + TestMod.MOD_ID);
+    }
+
+    public static Block GetBlock(String name) {
+        return modBlocks.get(name);
     }
 
 }

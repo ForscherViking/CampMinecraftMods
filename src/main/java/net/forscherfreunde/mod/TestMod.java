@@ -1,10 +1,12 @@
 package net.forscherfreunde.mod;
 
 import net.fabricmc.api.ModInitializer;
+import net.forscherfreunde.mod.ausruestung.ModRuestungsMaterial;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.block.ModBlocks;
 import net.forscherfreunde.mod.registry.item.ModItemGroups;
 import net.forscherfreunde.mod.registry.item.ModItems;
+import net.minecraft.item.ArmorItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,6 +36,13 @@ public class TestMod implements ModInitializer {
 
 		//Test Custom Essen
 		Mod.FoodItemHinzufuegen("tomato");
+
+		//Test Custom Rüstung
+		Mod.RuestungHinzufuegen("ruby_helmet", ModRuestungsMaterial.RUBY, ArmorItem.Type.HELMET);
+		Mod.RuestungHinzufuegen("ruby_chestplate", ModRuestungsMaterial.RUBY, ArmorItem.Type.CHESTPLATE);
+		Mod.RuestungHinzufuegen("ruby_leggings", ModRuestungsMaterial.RUBY, ArmorItem.Type.LEGGINGS);
+		Mod.RuestungHinzufuegen("ruby_boots", ModRuestungsMaterial.RUBY, ArmorItem.Type.BOOTS);
+
 
 
 		//Nicht Verändern!! Initialisierung der Mod...

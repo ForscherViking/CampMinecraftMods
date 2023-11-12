@@ -36,7 +36,7 @@ public class RubinMaterial extends AusruestungsMaterial {
     @Override
     public Item[] gebeReparaturZutat() {
         return new Item[]{
-                Mod.HoleItem("rubin"),
+                Mod.HoleItem("ruby"),
                 Items.DIAMOND
         };
     }
