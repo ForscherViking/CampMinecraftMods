@@ -1,7 +1,10 @@
 package net.forscherfreunde.mod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.forscherfreunde.mod.ausruestung.ModRuestungsMaterial;
+import net.forscherfreunde.mod.entity.ModEntities;
+import net.forscherfreunde.mod.entity.custom.PorcupineEntity;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.block.ModBlocks;
 import net.forscherfreunde.mod.registry.item.ModItemGroups;
@@ -49,5 +52,6 @@ public class TestMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		FabricDefaultAttributeRegistry.register(ModEntities.PORCUPINE, PorcupineEntity.createPorcupineAttribute());
 	}
 }
