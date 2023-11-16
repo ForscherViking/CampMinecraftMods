@@ -1,6 +1,20 @@
 {
   "item.forscherfreundemod.ruby": "Ruby",
   "block.forscherfreundemod.ruby_block": "Ruby Block",
+  "block.forscherfreundemod.ruby_ore": "Ruby Ore",
+  "block.forscherfreundemod.ruby_glass": "Ruby Glass",
+  "item.forscherfreundemod.ruby_pickaxe": "Ruby Pickaxe",
+  "item.forscherfreundemod.ruby_sword": "Ruby Sword",
+  "item.forscherfreundemod.ruby_hoe": "Ruby Hoe",
+  "item.forscherfreundemod.ruby_axe": "Ruby Axe",
+  "item.forscherfreundemod.ruby_shovel": "Ruby Shovel",
 
-  "itemgroup.ruby": "Ruby Testgruppe"
+  "item.forscherfreundemod.tomato": "Tomato",
+
+  "item.forscherfreundemod.ruby_helmet": "Ruby Helmet",
+  "item.forscherfreundemod.ruby_chestplate": "Ruby Chestplate",
+  "item.forscherfreundemod.ruby_leggings": "Ruby Leggings",
+  "item.forscherfreundemod.ruby_boots": "Ruby Boots",
+
+  "itemgroup.ruby": "ForscherFreunde Mod"
 }

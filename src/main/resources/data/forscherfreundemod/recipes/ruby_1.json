@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "forscherfreundemod:ruby_block"
+    }
+  ],
+  "result": {
+    "item": "forscherfreundemod:ruby",
+    "count": 9
+  }
+}
