@@ -12,7 +12,7 @@ public class PorcupineRenderer extends MobEntityRenderer<PorcupineEntity, Porcup
 
     private static final Identifier TEXTURE = new Identifier(TestMod.MOD_ID, "textures/entity/porcupine.png");
     public PorcupineRenderer(EntityRendererFactory.Context context) {
-        super(context, new PorcupineModel<>(context.getPart(ModModelLayers.PORCUPINE)), 0.6f);
+        super(context, new PorcupineModel<>(context.getPart(ModModelLayers.EntityModels.get("porcupine"))), 0.6f);
     }
 
     @Override

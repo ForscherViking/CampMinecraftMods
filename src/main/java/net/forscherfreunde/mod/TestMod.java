@@ -3,7 +3,10 @@ package net.forscherfreunde.mod;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.forscherfreunde.mod.ausruestung.ModRuestungsMaterial;
+import net.forscherfreunde.mod.entity.CustomModEntities;
 import net.forscherfreunde.mod.entity.ModEntities;
+import net.forscherfreunde.mod.entity.client.ModModelLayers;
+import net.forscherfreunde.mod.entity.client.PorcupineModel;
 import net.forscherfreunde.mod.entity.custom.PorcupineEntity;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.block.ModBlocks;
@@ -46,12 +49,15 @@ public class TestMod implements ModInitializer {
 		Mod.RuestungHinzufuegen("ruby_leggings", ModRuestungsMaterial.RUBY, ArmorItem.Type.LEGGINGS);
 		Mod.RuestungHinzufuegen("ruby_boots", ModRuestungsMaterial.RUBY, ArmorItem.Type.BOOTS);
 
+		//Test Custom Mobs und Animals
+//		Mod.TierHinzufuegen("porcupine", PorcupineEntity::new, 1f, 1f, 1f, "textures/entity/porcupine.png");
+
 
 
 		//Nicht Verändern!! Initialisierung der Mod...
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		FabricDefaultAttributeRegistry.register(ModEntities.PORCUPINE, PorcupineEntity.createPorcupineAttribute());
+		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createPorcupineAttribute());
 	}
 }

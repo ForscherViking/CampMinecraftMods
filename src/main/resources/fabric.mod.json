@@ -8,8 +8,7 @@
 		"Matthias Mendler"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"email": "mmendler@uni-osnabrueck.de"
 	},
 	"license": "MIT",
 	"environment": "*",

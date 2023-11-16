@@ -13,6 +13,8 @@ import net.minecraft.util.math.MathHelper;
 // Made with Blockbench 4.8.3
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
+
+//change Type paramter to <T extends <<entityname>> > and extends to SinglePartEntityModel<T>
 public class PorcupineModel<T extends PorcupineEntity> extends SinglePartEntityModel<T> {
 	private final ModelPart porcupine;
 	private final ModelPart head;
