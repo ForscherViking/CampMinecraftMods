@@ -24,11 +24,6 @@ public class ModEntities {
 
     public static HashMap<String, EntityType<PorcupineEntity>> ModEntitiesMap = new HashMap<>();
 
-//    public static final EntityType<PorcupineEntity> PORCUPINE = Registry.register(Registries.ENTITY_TYPE,
-//            new Identifier(TestMod.MOD_ID, "porcupine"),
-//            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new)
-//                    .dimensions(EntityDimensions.fixed(1f, 1f)).build());
-
     public static void createModEntities (String name, EntityType.EntityFactory<PorcupineEntity> entityType){
         EntityType<PorcupineEntity> entityType1 =  Registry.register(Registries.ENTITY_TYPE,
                 new Identifier(TestMod.MOD_ID, name),
