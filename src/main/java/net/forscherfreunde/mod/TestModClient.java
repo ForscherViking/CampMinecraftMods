@@ -17,9 +17,14 @@ public class TestModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        //Zeilen kopieren und Namen ändern vom .get Aufruf
+
         EntityModelLayerRegistry.registerModelLayer(EntityModels.get("porcupine_model"), PorcupineModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineRenderer::new);
 
+
+
+        //Nicht anfassen - Transparente Blöcke registrieren
         for (Block transparentBlock : Mod.GetAllTransparentBlocks()) {
             BlockRenderLayerMap.INSTANCE.putBlock(transparentBlock, RenderLayer.getCutout());
         }

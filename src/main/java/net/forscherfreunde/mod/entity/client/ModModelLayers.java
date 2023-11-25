@@ -9,6 +9,8 @@ import java.util.HashMap;
 
 public class ModModelLayers {
 
+    //soweit clean und müssen nicht mehr verändert werden
+
     public static HashMap<String, EntityModelLayer> EntityModels = new HashMap<>();
 
     public static EntityModelLayer createEntityModelLayer(String name) {
