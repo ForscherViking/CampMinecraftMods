@@ -11,9 +11,6 @@ public class ModModelLayers {
 
     public static HashMap<String, EntityModelLayer> EntityModels = new HashMap<>();
 
-//    public static final EntityModelLayer PORCUPINE =
-//            new EntityModelLayer(new Identifier(TestMod.MOD_ID, "porcupine"), "main");
-
     public static EntityModelLayer createEntityModelLayer(String name) {
         return new EntityModelLayer(new Identifier(TestMod.MOD_ID, name), "main");
     }

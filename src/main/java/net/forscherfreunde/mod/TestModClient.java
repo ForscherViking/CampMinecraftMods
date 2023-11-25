@@ -17,9 +17,6 @@ public class TestModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-//        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.EntityModels.get("porcupine"), PorcupineModel::getTexturedModelData);
-//        EntityRendererRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineRenderer::new);
-
         EntityModelLayerRegistry.registerModelLayer(EntityModels.get("porcupine_model"), PorcupineModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineRenderer::new);
 
