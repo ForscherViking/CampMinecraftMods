@@ -47,8 +47,7 @@ public class TestMod implements ModInitializer {
 		Mod.RuestungHinzufuegen("ruby_boots", ModRuestungsMaterial.RUBY, ArmorItem.Type.BOOTS);
 
 		//Test Custom Mobs und Animals
-		ModEntities.createPorcupineEntity("porcupine", PorcupineEntity::new);
-
+		ModEntities.createCustomEntity("porcupine", PorcupineEntity::new);
 
 
 
@@ -56,6 +55,6 @@ public class TestMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createPorcupineAttribute());
+		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createModEntityAttributes());
 	}
 }
