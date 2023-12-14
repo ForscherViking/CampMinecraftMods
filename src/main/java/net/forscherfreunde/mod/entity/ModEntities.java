@@ -3,8 +3,7 @@ package net.forscherfreunde.mod.entity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.forscherfreunde.mod.TestMod;
 import net.forscherfreunde.mod.entity.client.ModModelLayers;
-import net.forscherfreunde.mod.entity.custom.ModEntity;
-import net.forscherfreunde.mod.entity.custom.PorcupineEntity;
+import net.forscherfreunde.mod.entity.vorlagen.ModEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -18,7 +17,7 @@ import java.util.HashMap;
 public class ModEntities {
 
 
-    //Clean - nicht mehr anpassen!!
+    //Clean - nicht mehr anpassen!
     public static HashMap<String, EntityType<? extends AnimalEntity>> ModEntitiesMap = new HashMap<>();
 
     public static void createCustomEntity(String name, EntityType.EntityFactory<ModEntity> entityType) {

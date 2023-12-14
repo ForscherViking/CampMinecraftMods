@@ -13,6 +13,22 @@ import net.minecraft.item.ArmorItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/*
+ * Willkommen bei Mods Programmierung V4 von ForscherFreunden - ich hoffe, ihr seid alle super angekommen und hattet
+ * schon einen tollen ersten Tag mit euren Netten und Coolen Teamern. Im Namen aller Teamer und Beteiligter an diesem
+ * Projekt - noch einmal Willkommen und eine tolle Zeit!
+ *
+ * Diese Klasse wird den großteil eurer Arbeit abnehmen - deswegen lest bitte unbedingt Kapitel [...] in der Doku genau
+ * durch, damit ihr ohne Fehler und entspannt mit der Mod arbeiten könnt und mit Freude unkompliziert selber Minecraft
+ * anpassen könnt. Dieses Programm dient dem Einstieg in Minecraft - Modding und bietet eine Referenz was möglich ist.
+ *
+ * @Author
+ * Matthias Mendler
+ * @Rechte
+ * ForscherFreunde GmbH
+ */
+
+
 public class TestMod implements ModInitializer {
 	public static final String MOD_ID = "forscherfreundemod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -48,13 +64,13 @@ public class TestMod implements ModInitializer {
 
 		//Test Custom Mobs und Animals
 		ModEntities.createCustomEntity("porcupine", PorcupineEntity::new);
+		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createModEntityAttributes());
 
+		// *********************************************************************************************************************************************
 
-
-		//Nicht Verändern!! Initialisierung der Mod...
+		//Nicht Verändern! Initialisierung der Mod...
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createModEntityAttributes());
 	}
 }
