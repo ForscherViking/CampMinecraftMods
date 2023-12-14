@@ -5,6 +5,12 @@ import net.forscherfreunde.mod.registry.Mod;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
+/*
+ * Diese Klasse ist die Materialklasse der Vorschauitems "Rubin".
+ * Hier seht ihr einmal alle wichtigen Werte implementiert, um eure eigene Klasse zu erstellen.
+ * Lest dafür Kapitel [...] in der Doku genau durch.
+ */
+
 
 public class RubinMaterial extends AusruestungsMaterial {
 

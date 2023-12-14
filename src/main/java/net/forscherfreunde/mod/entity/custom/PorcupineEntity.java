@@ -1,16 +1,22 @@
 package net.forscherfreunde.mod.entity.custom;
 
 import net.forscherfreunde.mod.entity.ModEntities;
+import net.forscherfreunde.mod.entity.vorlagen.ModEntity;
+import net.forscherfreunde.mod.registry.Mod;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+
+/*
+ + BITTE GENAU LESEN!! +
+ * Dies ist die Entity Klasse der Custom Entity "Porcupine", die hier zur Vorschau dient.
+ * Bitte lest die Klasse "CustomEntityVorlage" genau durch - und die Doku auf Seite [...]
+ */
+
+
 
 public class PorcupineEntity extends ModEntity {
 
@@ -18,26 +24,29 @@ public class PorcupineEntity extends ModEntity {
         super(entityType, world);
     }
 
+    // Anpassen vom .get("custom_entity_name")
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.ModEntitiesMap.get("porcupine").create(world);
     }
 
     @Override
+    // Anpassen des Paarungs-Essens
     public boolean isBreedingItem(ItemStack itemStack) {
-        return itemStack.isOf(Items.BEETROOT);
+        return itemStack.isOf(Mod.HoleItem("tomato"));
     }
 
     @Override
     protected void initGoals() {
 
-        //Custom Goals anpassen -
-        this.goalSelector.add(2, new TemptGoal(this, 1.25D, Ingredient.ofItems(Items.APPLE), false));
+        //Custom Goals anpassen - Schlüsselwörter in Doku
 
-        this.goalSelector.add(3, new FollowParentGoal(this, 1.15D));
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.15D));
-        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 4f));
-        this.goalSelector.add(6, new LookAroundGoal(this));
-        this.goalSelector.add(7, new EatGrassGoal(this));
+        this.goalSelector.add(2, setzeZiele("Verführen_Ziel"));
+        this.goalSelector.add(3, setzeZiele("Folge_Eltern_Ziel"));
+        this.goalSelector.add(4, setzeZiele("Herumlaufen_Ziel"));
+        this.goalSelector.add(5, setzeZiele("Anschauen_Ziel"));
+        this.goalSelector.add(6, setzeZiele("Herumschauen_Ziel"));
+        this.goalSelector.add(7, setzeZiele("Grasen_Ziel"));
+        this.goalSelector.add(8, setzeZiele("Atme_Ziel"));
     }
 }
