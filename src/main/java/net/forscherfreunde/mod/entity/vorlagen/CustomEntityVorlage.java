@@ -3,6 +3,9 @@ package net.forscherfreunde.mod.entity.vorlagen;
 import net.forscherfreunde.mod.entity.ModEntities;
 import net.forscherfreunde.mod.registry.Mod;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.AnimalMateGoal;
+import net.minecraft.entity.ai.goal.EscapeDangerGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.item.ItemStack;
@@ -44,8 +47,14 @@ public class CustomEntityVorlage extends ModEntity{
 
     @Override
     protected void initGoals() {
-        // Hier dann neue Ziele von Liste -- Bitte mit Priorität: 2 Anfangen (Also einfach 2, setzeZiel("..."))
 
-        this.goalSelector.add(2, setzeZiele("name_von_Ziel_von_Liste"));
+        //Diese Ziele nicht anpassen!
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
+
+        // Hier dann neue Ziele von Liste -- Bitte mit Priorität: 3 Anfangen (Also einfach 3, setzeZiel("..."))
+
+        this.goalSelector.add(3, setzeZiele("name_von_Ziel_von_Liste", this));
     }
 }
