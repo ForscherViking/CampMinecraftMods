@@ -28,4 +28,6 @@ public class ModEntities {
         ModEntitiesMap.put(name, entityType1);
         ModModelLayers.registerModelLayer(name);
     }
+
+    //Hostile Mob klasse auch noch
 }

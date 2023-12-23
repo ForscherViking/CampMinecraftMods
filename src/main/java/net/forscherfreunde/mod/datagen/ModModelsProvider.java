@@ -16,6 +16,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        //Blockstates und Models - siehe Kapitel 2.5 an Tag 2
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GetBlock("ruby_block"));
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GetBlock("ruby_ore"));
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GetBlock("ruby_glass"));
@@ -24,15 +25,18 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        //Items - einfach die Zeile vom Rubin kopieren und anpassen (Siehe Kapitel 2.4 an Tag 2)
         itemModelGenerator.register(ModItems.GetItem("ruby"), Models.GENERATED);
         itemModelGenerator.register(ModItems.GetItem("tomato"), Models.GENERATED);
 
+        //Werkzeuge - siehe Kapitel [...]
         itemModelGenerator.register(ModItems.GetItem("ruby_axe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_hoe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_shovel"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_pickaxe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_sword"), Models.HANDHELD);
 
+        //Rüstungen - siehe Kapitel [...]
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GetItem("ruby_helmet"));
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GetItem("ruby_chestplate"));
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GetItem("ruby_leggings"));

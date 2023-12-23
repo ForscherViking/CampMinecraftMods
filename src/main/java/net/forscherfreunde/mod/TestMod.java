@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /*
  * Willkommen bei Mods Programmierung V4 von ForscherFreunden - ich hoffe, ihr seid alle super angekommen und hattet
- * schon einen tollen ersten Tag mit euren Netten und Coolen Teamern. Im Namen aller Teamer und Beteiligter an diesem
+ * schon einen tollen ersten Tag mit euren Netten und Coolen Teamern. Im Namen aller Teamer und Beteiligten an diesem
  * Projekt - noch einmal Willkommen und eine tolle Zeit!
  *
  * Diese Klasse wird den großteil eurer Arbeit abnehmen - deswegen lest bitte unbedingt Kapitel [...] in der Doku genau
@@ -36,7 +36,7 @@ public class TestMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		//TestBlöcke und Items - einfach Code kopieren und Namen anpassen.
+		//TestBlöcke und Items - einfach Code kopieren und Namen anpassen. Nicht anpassen oder Löschen.
 		Mod.ItemHinzufuegen("ruby");
 
 		Mod.BlockHinzufuegen("ruby_block", 2.0f, 4);

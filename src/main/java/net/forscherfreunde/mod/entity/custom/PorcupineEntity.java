@@ -1,11 +1,16 @@
 package net.forscherfreunde.mod.entity.custom;
 
 import net.forscherfreunde.mod.entity.ModEntities;
-import net.forscherfreunde.mod.entity.vorlagen.ModEntity;
+import net.forscherfreunde.mod.entity.vorlagen.CustomEntityVorlage;
 import net.forscherfreunde.mod.registry.Mod;
+import net.forscherfreunde.mod.registry.item.ModItems;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.AnimalMateGoal;
+import net.minecraft.entity.ai.goal.EscapeDangerGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
@@ -18,7 +23,7 @@ import net.minecraft.world.World;
 
 
 
-public class PorcupineEntity extends ModEntity {
+public class PorcupineEntity extends CustomEntityVorlage {
 
     public PorcupineEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -39,14 +44,26 @@ public class PorcupineEntity extends ModEntity {
     @Override
     protected void initGoals() {
 
-        //Custom Goals anpassen - Schlüsselwörter in Doku
+        //Standard Ziele - nicht ersetzen!
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
 
-        this.goalSelector.add(2, setzeZiele("Verführen_Ziel"));
-        this.goalSelector.add(3, setzeZiele("Folge_Eltern_Ziel"));
-        this.goalSelector.add(4, setzeZiele("Herumlaufen_Ziel"));
-        this.goalSelector.add(5, setzeZiele("Anschauen_Ziel"));
-        this.goalSelector.add(6, setzeZiele("Herumschauen_Ziel"));
-        this.goalSelector.add(7, setzeZiele("Grasen_Ziel"));
-        this.goalSelector.add(8, setzeZiele("Atme_Ziel"));
+
+        //Custom Goals anpassen - Schlüsselwörter in Doku
+        this.goalSelector.add(3, setzeZiele("Verführen_Ziel", this));
+        this.goalSelector.add(4, setzeZiele("Folge_Eltern_Ziel", this));
+        this.goalSelector.add(4, setzeZiele("Herumlaufen_Ziel", this));
+        this.goalSelector.add(5, setzeZiele("Anschauen_Ziel", this));
+        this.goalSelector.add(6, setzeZiele("Herumschauen_Ziel", this));
+        this.goalSelector.add(7, setzeZiele("Grasen_Ziel", this));
+        this.goalSelector.add(8, setzeZiele("Atme_Ziel", this));
+    }
+
+    //Anpassen des VerfuehrungsItems
+    @Override
+    public ItemConvertible setzeVerfuehrungsItem() {
+        VerfuehrungsItem = ModItems.GetItem("tomato");
+        return VerfuehrungsItem;
     }
 }

@@ -8,11 +8,13 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -34,6 +36,7 @@ public abstract class ModEntity extends AnimalEntity {
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+    public static Item VerfuehrungsItem;
 
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
@@ -60,11 +63,6 @@ public abstract class ModEntity extends AnimalEntity {
     @Override
     protected void initGoals() {
 
-        // Standard Goals für jede Custom Mob - Vererbung und Schwimmen
-        this.goalSelector.add(0, new SwimGoal(this));
-
-        this.goalSelector.add(1, new AnimalMateGoal(this, 1.15D));
-
     }
 
     public static DefaultAttributeContainer.Builder createModEntityAttributes() {
@@ -72,12 +70,12 @@ public abstract class ModEntity extends AnimalEntity {
 
                 // Attribute für alle Mobs - können angepasst werden mit custom Methoden
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 15)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.02f)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2d)
                 .add(EntityAttributes.GENERIC_ARMOR, 0.5f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2);
     }
 
-    // zum Anpassen des Paarungs-Items, bitte in der jeweiligen Entity Klasse anpassen - Siehe ModEntity.java
+    // zum Anpassen des Paarungs-Items, bitte in der jeweiligen Entity Klasse anpassen - Siehe CustomEntityVorlage.java
     @Override
     public boolean isBreedingItem(ItemStack stack) {
         return false;
@@ -108,20 +106,31 @@ public abstract class ModEntity extends AnimalEntity {
         return SoundEvents.ENTITY_DOLPHIN_HURT;
     }
 
-    public Goal setzeZiele(String goal) {
+    public Goal setzeZiele(String goal, PathAwareEntity entity) {
 
         // Custom Ziele auf Deutsch als Switch - genauere Beschreibung in der Doku
         Goal neuesZiel = null;
         switch (goal) {
-            case "Verführen_Ziel": neuesZiel = new TemptGoal(this, 1.15D, Ingredient.ofItems(Items.APPLE), false);
-            case "Folge_Eltern_Ziel": neuesZiel = new FollowParentGoal(this, 1.15D);
-            case "Herumlaufen_Ziel": neuesZiel = new WanderAroundFarGoal(this, 1.15D);
-            case "Anschauen_Ziel": neuesZiel = new LookAtEntityGoal(this, PlayerEntity.class, 4f);
-            case "Herumschauen_Ziel": neuesZiel = new LookAroundGoal(this);
-            case "Grasen_Ziel": neuesZiel = new EatGrassGoal(this);
-            case "Ausser_Sonne_Ziel": neuesZiel = new AvoidSunlightGoal(this);
-            case "Atme_Ziel": neuesZiel = new BreatheAirGoal(this);
+            case "Verführen_Ziel": neuesZiel = new TemptGoal(entity, 1.15d, Ingredient.ofItems(setzeVerfuehrungsItem()), false);
+            break;
+            case "Folge_Eltern_Ziel": neuesZiel = new FollowParentGoal((AnimalEntity) entity, 1.15d);
+            break;
+            case "Herumlaufen_Ziel": neuesZiel = new WanderAroundFarGoal(entity, 1.15d);
+            break;
+            case "Anschauen_Ziel": neuesZiel = new LookAtEntityGoal(entity, PlayerEntity.class, 4f);
+            break;
+            case "Herumschauen_Ziel": neuesZiel = new LookAroundGoal(entity);
+            break;
+            case "Grasen_Ziel": neuesZiel = new EatGrassGoal(entity);
+            break;
+            case "Ausser_Sonne_Ziel": neuesZiel = new AvoidSunlightGoal(entity);
+            break;
+            case "Atme_Ziel": neuesZiel = new BreatheAirGoal(entity);
         }
         return neuesZiel;
+    }
+
+    public ItemConvertible setzeVerfuehrungsItem() {
+        return null;
     }
 }
