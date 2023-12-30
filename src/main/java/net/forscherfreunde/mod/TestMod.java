@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.forscherfreunde.mod.ausruestung.ModRuestungsMaterial;
 import net.forscherfreunde.mod.entity.ModEntities;
+import net.forscherfreunde.mod.entity.custom.CloudyEntity;
 import net.forscherfreunde.mod.entity.custom.PorcupineEntity;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.block.ModBlocks;
@@ -18,8 +19,8 @@ import org.slf4j.LoggerFactory;
  * schon einen tollen ersten Tag mit euren Netten und Coolen Teamern. Im Namen aller Teamer und Beteiligten an diesem
  * Projekt - noch einmal Willkommen und eine tolle Zeit!
  *
- * Diese Klasse wird den großteil eurer Arbeit abnehmen - deswegen lest bitte unbedingt Kapitel [...] in der Doku genau
- * durch, damit ihr ohne Fehler und entspannt mit der Mod arbeiten könnt und mit Freude unkompliziert selber Minecraft
+ * Diese Klasse wird den großteil eurer Arbeit abnehmen - deswegen lest bitte unbedingt Kapitel [2] in der Doku [Tag 1]
+ * genau durch, damit ihr ohne Fehler und entspannt mit der Mod arbeiten könnt und mit Freude unkompliziert Minecraft
  * anpassen könnt. Dieses Programm dient dem Einstieg in Minecraft - Modding und bietet eine Referenz was möglich ist.
  *
  * @Author
@@ -46,15 +47,15 @@ public class TestMod implements ModInitializer {
 
 
 		//TestWerkzeuge und Waffen - einfach Code kopieren und Namen und Attribute anpassen.
-		Mod.SchwertHinzufuegen("ruby_sword", new RubinMaterial(), 14, 1.6f, ModItemGroups.RUBY_GROUP, MOD_ID);
-		Mod.AxtHinzufuegen("ruby_axe", new RubinMaterial(), 12, 1.0f, ModItemGroups.RUBY_GROUP, MOD_ID);
-		Mod.FeldhackeHinzufuegen("ruby_hoe", new RubinMaterial(), 5, 1.0f, ModItemGroups.RUBY_GROUP, MOD_ID);
-		Mod.SchaufelHinzufuegen("ruby_shovel", new RubinMaterial(), 2, 1.0f, ModItemGroups.RUBY_GROUP, MOD_ID);
-		Mod.SpitzhackeHinzufuegen("ruby_pickaxe", new RubinMaterial(), 7, 1.2f, ModItemGroups.RUBY_GROUP, MOD_ID);
+		Mod.SchwertHinzufuegen("ruby_sword", new RubinMaterial(), 14, 1.6f);
+		Mod.AxtHinzufuegen("ruby_axe", new RubinMaterial(), 12, 1.0f);
+		Mod.FeldhackeHinzufuegen("ruby_hoe", new RubinMaterial(), 5, 1.0f);
+		Mod.SchaufelHinzufuegen("ruby_shovel", new RubinMaterial(), 2, 1.0f);
+		Mod.SpitzhackeHinzufuegen("ruby_pickaxe", new RubinMaterial(), 7, 1.2f);
 
 
 		//Test Custom Essen
-		Mod.FoodItemHinzufuegen("tomato");
+		Mod.FoodItemHinzufuegen("tomato", 3, 0.25f);
 
 		//Test Custom Rüstung
 		Mod.RuestungHinzufuegen("ruby_helmet", ModRuestungsMaterial.RUBY, ArmorItem.Type.HELMET);
@@ -65,6 +66,8 @@ public class TestMod implements ModInitializer {
 		//Test Custom Mobs und Animals
 		ModEntities.createCustomEntity("porcupine", PorcupineEntity::new);
 		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createModEntityAttributes());
+		ModEntities.createCustomMob("cloudy", CloudyEntity::new);
+		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("cloudy"), CloudyEntity.createMobAttributes());
 
 		// *********************************************************************************************************************************************
 

@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.impl.object.builder.FabricEntityType;
 import net.forscherfreunde.mod.entity.ModEntities;
+import net.forscherfreunde.mod.entity.client.CloudyModel;
+import net.forscherfreunde.mod.entity.client.CloudyRenderer;
 import net.forscherfreunde.mod.entity.client.PorcupineModel;
 import net.forscherfreunde.mod.entity.client.PorcupineRenderer;
 import net.forscherfreunde.mod.registry.Mod;
@@ -29,8 +31,10 @@ public class TestModClient implements ClientModInitializer {
 
         //Zeilen kopieren und Namen ändern vom .get Aufruf - .get("custom_entity_name"), und dem CustomModel::getTexturedModelData
         EntityModelLayerRegistry.registerModelLayer(EntityModels.get("porcupine_model"), PorcupineModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(EntityModels.get("cloudy_model"), CloudyModel::getTexturedModelData);
         //Anpassen vom .get("custom_entity_name") und dem CustomEntityRenderer::new
         EntityRendererRegistry.register(((FabricEntityType) ModEntities.ModEntitiesMap.get("porcupine")), PorcupineRenderer::new);
+        EntityRendererRegistry.register(((FabricEntityType) ModEntities.ModEntitiesMap.get("cloudy")), CloudyRenderer::new);
 
 
 

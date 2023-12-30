@@ -37,7 +37,7 @@ public class CustomEntityVorlage extends ModEntity{
 
     @Override
     public @Nullable PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.ModEntitiesMap.get("name_von_custom_entity").create(world);
+        return (PassiveEntity) ModEntities.ModEntitiesMap.get("name_von_custom_entity").create(world);
     }
 
     @Override

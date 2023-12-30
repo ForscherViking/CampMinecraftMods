@@ -1,5 +1,6 @@
 package net.forscherfreunde.mod.entity.vorlagen;
 
+import net.forscherfreunde.mod.entity.custom.CloudyEntity;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
@@ -63,6 +64,16 @@ public abstract class ModEntity extends AnimalEntity {
     @Override
     protected void initGoals() {
 
+        //Standard Ziele - nicht ersetzen!
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
+        this.goalSelector.add(3, new FleeEntityGoal<>(this, CloudyEntity.class, 6.0f, 1.2d, 2d));
+        initCustomGoals();
+    }
+
+    protected void initCustomGoals() {
+
     }
 
     public static DefaultAttributeContainer.Builder createModEntityAttributes() {
@@ -105,6 +116,7 @@ public abstract class ModEntity extends AnimalEntity {
     protected SoundEvent getHurtSound(DamageSource source) {
         return SoundEvents.ENTITY_DOLPHIN_HURT;
     }
+
 
     public Goal setzeZiele(String goal, PathAwareEntity entity) {
 
