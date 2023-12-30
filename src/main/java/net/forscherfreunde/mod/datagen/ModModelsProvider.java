@@ -29,7 +29,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GetItem("ruby"), Models.GENERATED);
         itemModelGenerator.register(ModItems.GetItem("tomato"), Models.GENERATED);
 
-        //Werkzeuge - siehe Kapitel [...]
+        //Werkzeuge - siehe Kapitel [1.4] an [Tag_3]
         itemModelGenerator.register(ModItems.GetItem("ruby_axe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_hoe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_shovel"), Models.HANDHELD);

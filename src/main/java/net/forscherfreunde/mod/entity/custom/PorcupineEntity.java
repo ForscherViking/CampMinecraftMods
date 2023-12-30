@@ -7,6 +7,7 @@ import net.forscherfreunde.mod.registry.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.AnimalMateGoal;
 import net.minecraft.entity.ai.goal.EscapeDangerGoal;
+import net.minecraft.entity.ai.goal.FleeEntityGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -32,7 +33,7 @@ public class PorcupineEntity extends CustomEntityVorlage {
     // Anpassen vom .get("custom_entity_name")
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.ModEntitiesMap.get("porcupine").create(world);
+        return (PassiveEntity) ModEntities.ModEntitiesMap.get("porcupine").create(world);
     }
 
     @Override
@@ -42,13 +43,7 @@ public class PorcupineEntity extends CustomEntityVorlage {
     }
 
     @Override
-    protected void initGoals() {
-
-        //Standard Ziele - nicht ersetzen!
-        this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
-        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-
+    protected void initCustomGoals() {
 
         //Custom Goals anpassen - Schlüsselwörter in Doku
         this.goalSelector.add(3, setzeZiele("Verführen_Ziel", this));
@@ -57,7 +52,6 @@ public class PorcupineEntity extends CustomEntityVorlage {
         this.goalSelector.add(5, setzeZiele("Anschauen_Ziel", this));
         this.goalSelector.add(6, setzeZiele("Herumschauen_Ziel", this));
         this.goalSelector.add(7, setzeZiele("Grasen_Ziel", this));
-        this.goalSelector.add(8, setzeZiele("Atme_Ziel", this));
     }
 
     //Anpassen des VerfuehrungsItems
