@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
  * schon einen tollen ersten Tag mit euren Netten und Coolen Teamern. Im Namen aller Teamer und Beteiligten an diesem
  * Projekt - noch einmal Willkommen und eine tolle Zeit!
  *
- * Diese Klasse wird den großteil eurer Arbeit abnehmen - deswegen lest bitte unbedingt Kapitel [2] in der Doku [Tag 1]
+ * Diese Klasse wird den großteil eurer Arbeit abnehmen - deswegen lest bitte unbedingt Kapitel [2] in der Doku [Tag_1]
  * genau durch, damit ihr ohne Fehler und entspannt mit der Mod arbeiten könnt und mit Freude unkompliziert Minecraft
  * anpassen könnt. Dieses Programm dient dem Einstieg in Minecraft - Modding und bietet eine Referenz was möglich ist.
  *
@@ -46,7 +46,7 @@ public class TestMod implements ModInitializer {
 
 
 
-		//TestWerkzeuge und Waffen - einfach Code kopieren und Namen und Attribute anpassen.
+		//TestWerkzeuge und Waffen - einfach Code kopieren und Namen und Attribute anpassen. Siehe Kapitel [1.3] in der Doku [Tag_3]
 		Mod.SchwertHinzufuegen("ruby_sword", new RubinMaterial(), 14, 1.6f);
 		Mod.AxtHinzufuegen("ruby_axe", new RubinMaterial(), 12, 1.0f);
 		Mod.FeldhackeHinzufuegen("ruby_hoe", new RubinMaterial(), 5, 1.0f);

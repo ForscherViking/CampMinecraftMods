@@ -3,8 +3,15 @@ package net.forscherfreunde.mod.entity.vorlagen;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
+
+/*
+ * Dies ist die GrundKlasse für eure CustomMobs. Lest euch die Vorlage CustomMobVorlage, und die Doku in Ruhe durch.
+ * Die einzelnen Zeilen Code sind genauer mit Kommentaren wie diesem erklärt
+ */
 
 public abstract class ModMob extends HostileEntity {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -34,6 +41,20 @@ public abstract class ModMob extends HostileEntity {
         if (this.getWorld().isClient()) {
             setupAnimationStates();
         }
+    }
+
+    @Override
+    protected void initGoals() {
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new AttackGoal(this));
+        this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
+        this.goalSelector.add(8, new LookAroundGoal(this));
+        this.goalSelector.add(7, new WanderAroundFarGoal(this, 1.0));
+        initCustomGoals();
+    }
+
+    protected void initCustomGoals() {
+
     }
 
 }
