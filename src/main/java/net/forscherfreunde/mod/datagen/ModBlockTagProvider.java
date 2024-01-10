@@ -20,19 +20,50 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
 
+        //Für Blöcke die von Spitzhacken abbaubar sind
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.GetBlock("ruby_ore"))
                 .add(ModBlocks.GetBlock("ruby_block"))
-                .add(ModBlocks.GetBlock("ruby_glass"));
+                .add(ModBlocks.GetBlock("ruby_glass"))
+        ;
 
+        //Für Blöcke die von Äxten abbaubar sind
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+        ;
+
+        //Für Blöcke die von Schaufeln abbaubar sind
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+        ;
+
+        //Für Blöcke die von Hacken abbaubar sind
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+        ;
+
+        //Für Blöcke, die schneller durch ein Schwert abbaubar sind
+        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+        ;
+
+        //Für Steinwerkzeuge und höher
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.GetBlock("ruby_glass"));
+                .add(ModBlocks.GetBlock("ruby_glass"))
+        ;
 
+        //Für Eisenwerkzeuge und höher
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.GetBlock("ruby_block"))
-                .add(ModBlocks.GetBlock("ruby_ore"));
+                .add(ModBlocks.GetBlock("ruby_ore"))
+        ;
 
+        //Für Diamantwerkzeuge und höher
+        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        ;
+
+        //Für Netherritewerkzeuge und höher
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
-                ;
+        ;
+
+        //Für Customwerkzeuge ab level 5
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
+        ;
     }
 }

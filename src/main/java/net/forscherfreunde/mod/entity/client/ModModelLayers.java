@@ -8,14 +8,15 @@ import java.util.HashMap;
 
 public class ModModelLayers {
 
-    public static HashMap<String, EntityModelLayer> EntityModels = new HashMap();
+    //soweit clean und müssen nicht mehr verändert werden
 
-//    public static final EntityModelLayer PORCUPINE =
-//            new EntityModelLayer(new Identifier(TestMod.MOD_ID, "porcupine"), "main");
+    public static HashMap<String, EntityModelLayer> EntityModels = new HashMap<>();
 
-    public static EntityModelLayer createEntityModelLayer(String name, String path) {
-        EntityModelLayer entityModelLayer = new EntityModelLayer(new Identifier(TestMod.MOD_ID, path), "main");
-        EntityModels.put(name, entityModelLayer);
-        return entityModelLayer;
+    public static EntityModelLayer createEntityModelLayer(String name) {
+        return new EntityModelLayer(new Identifier(TestMod.MOD_ID, name), "main");
+    }
+
+    public static void registerModelLayer(String name) {
+        EntityModels.put(name + "_model", createEntityModelLayer(name));
     }
 }

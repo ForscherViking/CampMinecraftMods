@@ -1,6 +1,6 @@
 {
   "form": "minecraft:crafting_shapeless",
-  "category": "building",
+  "category": "misc",
   "ingredients": [
     {
       "item": "forscherfreundemod:ruby_block"

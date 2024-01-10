@@ -7,6 +7,8 @@ import net.minecraft.item.FoodComponents;
 
 public class ModFoodComponents {
 
-    public static final FoodComponent TOMATO = new FoodComponent.Builder().hunger(3).saturationModifier(0.25f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 200), 0.25f).build();
+    //erstellt neues FoodComponent für die Mod-Klasse mit einem int Hunger-Wert und einem float HungerModifizierer-Wert
+    public static FoodComponent erstelleEssensItem(int Hunger, float HungerModifizierer) {
+        return new FoodComponent.Builder().hunger(Hunger).saturationModifier(HungerModifizierer).build();
+    }
 }

@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "pattern": [
     "###",
     "###",
@@ -12,6 +12,7 @@
     }
   },
   "result": {
-    "item": "forscherfreundemod:ruby_block"
+    "item": "forscherfreundemod:ruby_block",
+    "count": 1
   }
 }

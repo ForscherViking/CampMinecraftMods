@@ -1,104 +1,64 @@
 package net.forscherfreunde.mod.entity.custom;
 
-import net.forscherfreunde.mod.entity.CustomModEntities;
 import net.forscherfreunde.mod.entity.ModEntities;
-import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.EntityPose;
+import net.forscherfreunde.mod.entity.vorlagen.CustomEntityVorlage;
+import net.forscherfreunde.mod.entity.vorlagen.ModEntity;
+import net.forscherfreunde.mod.registry.Mod;
+import net.forscherfreunde.mod.registry.item.ModItems;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.*;
-import net.minecraft.entity.attribute.DefaultAttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.ai.goal.AnimalMateGoal;
+import net.minecraft.entity.ai.goal.EscapeDangerGoal;
+import net.minecraft.entity.ai.goal.FleeEntityGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
-public class PorcupineEntity extends AnimalEntity {
+/*
+ + BITTE GENAU LESEN!! +
+ * Dies ist die Entity Klasse der Custom Entity "Porcupine", die hier zur Vorschau dient.
+ * Bitte lest die Klasse "CustomEntityVorlage" genau durch - und die Doku [Tag 4 - Kapitel 4.1]
+ */
 
-    public final AnimationState idleAnimationState = new AnimationState();
-    private int idleAnimationTimeout = 0;
+
+
+public class PorcupineEntity extends ModEntity {
 
     public PorcupineEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    private void setupAnimationStates() {
-        if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
-            this.idleAnimationState.start(this.age);
-        } else
-            --this.idleAnimationTimeout;
-    }
-
-    @Override
-    protected void updateLimbs(float posDelta) {
-        float f = this.getPose() == EntityPose.STANDING ? Math.min(posDelta * 6.0f, 1.0f) : 0.0f;
-        this.limbAnimator.updateLimbs(f, 0.2f);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (this.getWorld().isClient()) {
-            setupAnimationStates();
-        }
-    }
-
-    @Override
-    protected void initGoals() {
-        this.goalSelector.add(0, new SwimGoal(this));
-
-        this.goalSelector.add(1, new AnimalMateGoal(this, 1.150));
-        this.goalSelector.add(2, new TemptGoal(this, 1.250, Ingredient.ofItems(Items.BEETROOT),false));
-
-        this.goalSelector.add(3, new FollowParentGoal(this, 1.150));
-
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 10));
-        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 4f));
-        this.goalSelector.add(6, new LookAroundGoal(this));
-    }
-
-    public static DefaultAttributeContainer.Builder createPorcupineAttribute() {
-        return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 15)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2f)
-                .add(EntityAttributes.GENERIC_ARMOR, 0.5f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2);
-    }
-
-    @Override
-    public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(Items.BEETROOT);
-    }
-
-    @Nullable
+    // Anpassen vom .get("custom_entity_name")
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return (PassiveEntity) ModEntities.ModEntitiesMap.get("porcupine").create(world);
     }
 
-    @Nullable
     @Override
-    protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_FOX_AMBIENT;
+    // Anpassen des Paarungs-Essens
+    public boolean isBreedingItem(ItemStack itemStack) {
+        return itemStack.isOf(Mod.HoleItem("tomato"));
     }
-    @Nullable
+
     @Override
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_CAT_HISS;
+    protected void initCustomGoals() {
+
+        //Custom Goals anpassen - Schlüsselwörter in Doku
+        this.goalSelector.add(3, setzeZiele("Verführen_Ziel", this));
+        this.goalSelector.add(4, setzeZiele("Folge_Eltern_Ziel", this));
+        this.goalSelector.add(4, setzeZiele("Herumlaufen_Ziel", this));
+        this.goalSelector.add(5, setzeZiele("Anschauen_Ziel", this));
+        this.goalSelector.add(6, setzeZiele("Herumschauen_Ziel", this));
+        this.goalSelector.add(7, setzeZiele("Grasen_Ziel", this));
     }
-    @Nullable
+
+    //Anpassen des VerfuehrungsItems
     @Override
-    protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_DOLPHIN_HURT;
+    public ItemConvertible setzeVerfuehrungsItem() {
+        VerfuehrungsItem = ModItems.GetItem("tomato");
+        return VerfuehrungsItem;
     }
 }

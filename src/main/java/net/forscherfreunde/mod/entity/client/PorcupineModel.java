@@ -14,7 +14,16 @@ import net.minecraft.util.math.MathHelper;
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
 
-//change Type paramter to <T extends <<entityname>> > and extends to SinglePartEntityModel<T>
+//change Type parameter to <T extends <<entity_name>> > and extends to SinglePartEntityModel<T>
+
+/*
+ + BITTE GENAU LESEN!! +
+ * Dies ist die erklärte Model Klasse der Vorlage "Porcupine". Diese Klasse bekommt ihr - wie auch in der Doku auf Seite
+ * [...] beschrieben - von Blockbench beim Exportieren und muss nur geringfügig angepasst werden.
+ * Alle nötigen Schritte findet ihr in der Doku in dem Kapitel [...], bitte haltet euch an die Vorgaben der Doku,
+ * sonst können Fehler entstehen, die sehr schwierig zu finden und zu beheben sind.
+ */
+
 public class PorcupineModel<T extends PorcupineEntity> extends SinglePartEntityModel<T> {
 	private final ModelPart porcupine;
 	private final ModelPart head;
