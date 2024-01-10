@@ -2,6 +2,7 @@ package net.forscherfreunde.mod.entity.custom;
 
 import net.forscherfreunde.mod.entity.ModEntities;
 import net.forscherfreunde.mod.entity.vorlagen.CustomEntityVorlage;
+import net.forscherfreunde.mod.entity.vorlagen.ModEntity;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.item.ModItems;
 import net.minecraft.entity.EntityType;
@@ -19,12 +20,12 @@ import net.minecraft.world.World;
 /*
  + BITTE GENAU LESEN!! +
  * Dies ist die Entity Klasse der Custom Entity "Porcupine", die hier zur Vorschau dient.
- * Bitte lest die Klasse "CustomEntityVorlage" genau durch - und die Doku auf Seite [...]
+ * Bitte lest die Klasse "CustomEntityVorlage" genau durch - und die Doku [Tag 4 - Kapitel 4.1]
  */
 
 
 
-public class PorcupineEntity extends CustomEntityVorlage {
+public class PorcupineEntity extends ModEntity {
 
     public PorcupineEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);

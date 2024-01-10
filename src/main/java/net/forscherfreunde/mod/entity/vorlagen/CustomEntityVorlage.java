@@ -15,8 +15,8 @@ import org.jetbrains.annotations.Nullable;
 
 /*
  + BITTE GENAU LESEN!! +
- * Diese Klasse ist eine Beispielklasse zum Kopieren und Anpassen - alle genauen Schritte sind in der Doku auf Seite ...
- * zu finden. Bitte achtet genau auf die Doku, da ihr sonst eventuell Fehler einbaut, die schwer zu finden sind.
+ * Diese Klasse ist eine Beispielklasse zum Kopieren und Anpassen - alle genauen Schritte sind in der Doku [Tag 4] in
+ * [Kapitel 4.1] zu finden. Bitte achtet genau auf die Doku, da ihr sonst eventuell Fehler einbaut, die schwer zu finden sind.
  * Bei Rot unterstrichenen Fehlern wie hier - Alle - bitte euren Teamer fragen, dass er sich den Fehler im Code
  * einmal anschauen kann. Diese Fehler führen dazu, dass das Programm gar nicht erst ausgeführt werden kann. Ihr bekommt
  * dann auch direkt einen Fehler in der Konsole ausgespuckt. Vermutlich liegt es dann an einem Rechtschreibfehler oder
@@ -46,13 +46,7 @@ public class CustomEntityVorlage extends ModEntity{
     }
 
     @Override
-    protected void initGoals() {
-
-        //Diese Ziele nicht anpassen!
-        this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
-        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-
+    protected void initCustomGoals() {
         // Hier dann neue Ziele von Liste -- Bitte mit Priorität: 3 Anfangen (Also einfach 3, setzeZiel("..."))
 
         this.goalSelector.add(3, setzeZiele("name_von_Ziel_von_Liste", this));

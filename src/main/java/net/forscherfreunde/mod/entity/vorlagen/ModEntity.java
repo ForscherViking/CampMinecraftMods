@@ -24,9 +24,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 /*
- * Dies ist die GrundKlasse für eure CustomEntities. Bitte gründlich das Kapitel [...] der Doku lesen.
- * Die einzelnen Zeilen Code sind genauer mit Kommentaren wie diesem erklärt, da findet ihr dann auch genauere Hinweise
- * in der Doku in Kapitel [...]
+ * Dies ist die GrundKlasse für eure CustomEntities. Lest euch die Vorlage CustomEntityVorlage, und die Doku in Ruhe durch.
+ * Die einzelnen Zeilen Code sind genauer mit Kommentaren wie diesem erklärt
  */
 
 
