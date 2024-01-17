@@ -14,4 +14,6 @@ Die Funktionalitäten belaufen sich auf:
 Die Funktionalitäten sind so gut wie möglich vereinfacht und aus der TestMod Klasse zugreifbar.
 Die genaue Benutzung wird in der Doku erklärt.
 
+Zur Benutzung einfach die run ZipDatei in das Arbeitsverzeichnis entpacken.
+
 Alle Rechte bleiben im Besitz von Matthias Mendler - bis andersweitig geklärt.
