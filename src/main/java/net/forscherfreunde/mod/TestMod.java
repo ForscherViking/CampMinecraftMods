@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.forscherfreunde.mod.ausruestung.ModRuestungsMaterial;
 import net.forscherfreunde.mod.entity.ModEntities;
 import net.forscherfreunde.mod.entity.custom.CloudyEntity;
+import net.forscherfreunde.mod.entity.custom.FFBearEntity;
 import net.forscherfreunde.mod.entity.custom.PorcupineEntity;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.block.ModBlocks;
@@ -68,6 +69,8 @@ public class TestMod implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createModEntityAttributes());
 		ModEntities.createCustomMob("cloudy", CloudyEntity::new);
 		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("cloudy"), CloudyEntity.createMobAttributes());
+		ModEntities.createCustomEntity("ffbear", FFBearEntity::new);
+		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("ffbear"), FFBearEntity.createModEntityAttributes());
 
 		// *********************************************************************************************************************************************
 
