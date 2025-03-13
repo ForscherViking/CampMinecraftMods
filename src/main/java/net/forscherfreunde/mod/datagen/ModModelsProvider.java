@@ -36,7 +36,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GetItem("ruby_pickaxe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_sword"), Models.HANDHELD);
 
-        //Rüstungen - siehe Kapitel [...]
+        //Rüstungen - siehe Doku [Rüstungen]
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GetItem("ruby_helmet"));
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GetItem("ruby_chestplate"));
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GetItem("ruby_leggings"));

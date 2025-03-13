@@ -1,11 +1,7 @@
 package net.forscherfreunde.mod;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.forscherfreunde.mod.ausruestung.ModRuestungsMaterial;
-import net.forscherfreunde.mod.entity.ModEntities;
-import net.forscherfreunde.mod.entity.custom.CloudyEntity;
-import net.forscherfreunde.mod.entity.custom.PorcupineEntity;
 import net.forscherfreunde.mod.registry.Mod;
 import net.forscherfreunde.mod.registry.block.ModBlocks;
 import net.forscherfreunde.mod.registry.item.ModItemGroups;
@@ -63,11 +59,6 @@ public class TestMod implements ModInitializer {
 		Mod.RuestungHinzufuegen("ruby_leggings", ModRuestungsMaterial.RUBY, ArmorItem.Type.LEGGINGS);
 		Mod.RuestungHinzufuegen("ruby_boots", ModRuestungsMaterial.RUBY, ArmorItem.Type.BOOTS);
 
-		//Test Custom Mobs und Animals
-		ModEntities.createCustomEntity("porcupine", PorcupineEntity::new);
-		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("porcupine"), PorcupineEntity.createModEntityAttributes());
-		ModEntities.createCustomMob("cloudy", CloudyEntity::new);
-		FabricDefaultAttributeRegistry.register(ModEntities.ModEntitiesMap.get("cloudy"), CloudyEntity.createMobAttributes());
 
 		// *********************************************************************************************************************************************
 

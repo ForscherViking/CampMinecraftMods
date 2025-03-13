@@ -14,7 +14,8 @@ import java.util.function.Supplier;
 public enum ModRuestungsMaterial implements ArmorMaterial {
 
     RUBY("ruby", 25, new int[] {3, 8, 6, 3}, 19,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2f, 0.2f, ()-> Ingredient.ofItems(ModItems.GetItem("ruby")));
+            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2f, 0.2f, ()-> Ingredient.ofItems(ModItems.GetItem("ruby")))
+    ;
 
 
 
