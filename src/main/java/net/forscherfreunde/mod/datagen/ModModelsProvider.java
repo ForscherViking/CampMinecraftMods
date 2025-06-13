@@ -25,7 +25,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        //Items - einfach die Zeile vom Rubin kopieren und anpassen (Siehe Kapitel 2.4 an Tag 2)
+        //Items - einfach die Zeile vom Rubin kopieren und anpassen
         itemModelGenerator.register(ModItems.GetItem("ruby"), Models.GENERATED);
         itemModelGenerator.register(ModItems.GetItem("tomato"), Models.GENERATED);
 
