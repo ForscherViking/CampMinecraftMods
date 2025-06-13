@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 
 /*
- * Dies ist die Client Klasse - siehe Kapitel [...] in der Doku.
+ * Dies ist die Client Klasse
  * Diese Klasse erfordert wenig Änderungen, jedoch müsst ihr darauf achten, jede Zeile Code hier ordentlich zu schreiben
  * damit keine Fehler entstehen. Hier ist also viel Vorsicht und Konzentration gefordert.
  * Gelbe unterstrichene Zeilen Code - wie unten schon steht - ist kein Problem und kann ignoriert werden.

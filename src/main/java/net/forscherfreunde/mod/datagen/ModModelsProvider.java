@@ -16,7 +16,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //Blockstates und Models - siehe Kapitel 2.5 an Tag 2
+        //Blockstates und Models
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GetBlock("ruby_block"));
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GetBlock("ruby_ore"));
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GetBlock("ruby_glass"));
@@ -29,7 +29,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GetItem("ruby"), Models.GENERATED);
         itemModelGenerator.register(ModItems.GetItem("tomato"), Models.GENERATED);
 
-        //Werkzeuge - siehe Kapitel [1.4] an [Tag_3]
+        //Werkzeuge
         itemModelGenerator.register(ModItems.GetItem("ruby_axe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_hoe"), Models.HANDHELD);
         itemModelGenerator.register(ModItems.GetItem("ruby_shovel"), Models.HANDHELD);
